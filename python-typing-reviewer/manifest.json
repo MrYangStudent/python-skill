@@ -1,0 +1,32 @@
+{
+  "name": "python-typing-reviewer",
+  "version": "1.1.0",
+  "description": "Python 类型注解审查技能。当用户要求审查类型注解、检查 TypeHint、或请求进行类型安全审查时触发。专门用于审查 Python 代码中类型注解的完整性和正确性。",
+  "triggers": [
+    "类型注解审查",
+    "TypeHint",
+    "mypy",
+    "类型检查",
+    "typing review",
+    "type annotation review",
+    "python typing check"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "typing",
+    "type-annotation",
+    "mypy",
+    "code-review"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-doc-generator",
+    "python-test-generator",
+    "error-handling-reviewer",
+    "python-full-dev-workflow"
+  ]
+}
