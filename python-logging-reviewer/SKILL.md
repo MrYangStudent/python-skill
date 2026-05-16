@@ -1,5 +1,5 @@
 ---
-name: logging-reviewer
+name: python-logging-reviewer
 description: >
   Python 日志规范审查技能。当用户要求审查日志代码、检查日志规范、
   或请求进行日志审查时触发。专门用于审查 Python 代码中的日志使用规范。

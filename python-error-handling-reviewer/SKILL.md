@@ -1,5 +1,5 @@
 ---
-name: error-handling-reviewer
+name: python-error-handling-reviewer
 description: >
   Python 错误处理审查技能。当用户要求审查代码错误处理、检查异常使用、
   或请求诊断类型错误等问题时触发。专门用于发现和修复 Python 代码中

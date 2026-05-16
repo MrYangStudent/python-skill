@@ -1,5 +1,5 @@
 ---
-name: performance-reviewer
+name: python-performance-reviewer
 description: >
   Python 性能审查技能。当用户要求审查代码性能、检查性能问题、
   或请求进行性能优化时触发。专门用于发现和修复 Python 代码中的性能瓶颈。

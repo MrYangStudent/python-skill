@@ -1,5 +1,5 @@
 ---
-name: api-design-reviewer
+name: python-api-design-reviewer
 description: >
   Python API 设计审查技能。当用户要求审查 API 设计、检查接口规范、
   或请求进行 API 审查时触发。专门用于审查 Python Web API 的设计质量和规范性。

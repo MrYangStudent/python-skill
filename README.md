@@ -31,21 +31,21 @@ python-skill/
 ├── 📂 Development Workflow/
 │   ├── python-project-rules/              # Project governance rules
 │   ├── python-full-dev-workflow/           # Complete development workflow
-│   └── feature-development-workflow/        # Feature development workflow
+│   └── python-feature-development-workflow/ # Feature development workflow
 │
 ├── 📂 Testing/
 │   └── python-test-generator/               # pytest test generation
 │
 ├── 📂 Code Review/
-│   ├── error-handling-reviewer/          # Error handling review
+│   ├── python-error-handling-reviewer/    # Error handling review
 │   ├── python-concurrency-reviewer/        # Concurrency safety review
-│   ├── security-reviewer/                 # Security audit
-│   ├── database-reviewer/                 # Database review
-│   ├── dependency-reviewer/              # Dependency management review
-│   ├── performance-reviewer/              # Performance review
-│   ├── logging-reviewer/                 # Logging standards review
-│   ├── python-typing-reviewer/           # Type annotation review
-│   └── api-design-reviewer/             # API design review
+│   ├── python-security-reviewer/           # Security audit
+│   ├── python-database-reviewer/           # Database review
+│   ├── python-dependency-reviewer/         # Dependency management review
+│   ├── python-performance-reviewer/        # Performance review
+│   ├── python-logging-reviewer/            # Logging standards review
+│   ├── python-typing-reviewer/             # Type annotation review
+│   └── python-api-design-reviewer/         # API design review
 │
 └── 📂 Documentation/
     ├── python-doc-generator/               # Code documentation generator
@@ -62,7 +62,7 @@ python-skill/
 |-------|-------------|
 | [python-project-rules](./python-project-rules/) | Project governance, progress sync, README sync |
 | [python-full-dev-workflow](./python-full-dev-workflow/) | Full development workflow integration |
-| [feature-development-workflow](./feature-development-workflow/) | Feature dev with TDD/BDD, requirements breakdown |
+| [python-feature-development-workflow](./python-feature-development-workflow/) | Feature dev with TDD/BDD, requirements breakdown |
 
 ### Testing
 
@@ -74,15 +74,15 @@ python-skill/
 
 | Skill | Description |
 |-------|-------------|
-| [error-handling-reviewer](./error-handling-reviewer/) | Exception wrapping, parameter validation |
+| [python-error-handling-reviewer](./python-error-handling-reviewer/) | Exception wrapping, parameter validation |
 | [python-concurrency-reviewer](./python-concurrency-reviewer/) | Thread safety, GIL understanding, async review |
-| [security-reviewer](./security-reviewer/) | Sensitive data, injection attacks, dependency vulnerabilities |
-| [database-reviewer](./database-reviewer/) | Connection pool, transactions, N+1 detection |
-| [dependency-reviewer](./dependency-reviewer/) | Third-party dependency necessity, security |
-| [performance-reviewer](./performance-reviewer/) | Resource cleanup, memory leaks, async optimization |
-| [logging-reviewer](./logging-reviewer/) | Log levels, data masking, structured logging |
+| [python-security-reviewer](./python-security-reviewer/) | Sensitive data, injection attacks, dependency vulnerabilities |
+| [python-database-reviewer](./python-database-reviewer/) | Connection pool, transactions, N+1 detection |
+| [python-dependency-reviewer](./python-dependency-reviewer/) | Third-party dependency necessity, security |
+| [python-performance-reviewer](./python-performance-reviewer/) | Resource cleanup, memory leaks, async optimization |
+| [python-logging-reviewer](./python-logging-reviewer/) | Log levels, data masking, structured logging |
 | [python-typing-reviewer](./python-typing-reviewer/) | TypeHint completeness, Protocol usage |
-| [api-design-reviewer](./api-design-reviewer/) | RESTful standards, HTTP semantics |
+| [python-api-design-reviewer](./python-api-design-reviewer/) | RESTful standards, HTTP semantics |
 
 ### Documentation
 
@@ -144,7 +144,7 @@ pip install pytest mypy black isort safety
                             ↓
 ┌─────────────────────────────────────────────────────────┐
 │                    Phase 1: Preparation & Docs           │
-│  feature-development-workflow → Requirements clarification │
+│  python-feature-development-workflow → Requirements clarification │
 │  python-doc-generator         → Project structure docs   │
 └─────────────────────────────────────────────────────────┘
                             ↓

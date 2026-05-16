@@ -1,5 +1,5 @@
 ---
-name: dependency-reviewer
+name: python-dependency-reviewer
 description: >
   Python 依赖管理审查技能。当用户要求审查依赖、检查包版本、
   或请求进行依赖审查时触发。专门用于审查 Python 项目依赖的必要性、安全性和版本控制。

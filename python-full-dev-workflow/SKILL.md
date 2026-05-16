@@ -34,17 +34,17 @@ triggers:
 |------|------|------|
 | 治理 | `python-project-rules` | 初始化、进度同步、README 联动 |
 | 文档 | `python-doc-generator` | 项目文档、Docstring 注释 |
-| 开发 | `feature-development-workflow` | 需求拆解、TDD 开发 |
+| 开发 | `python-feature-development-workflow` | 需求拆解、TDD 开发 |
 | 测试 | `python-test-generator` | 单元测试、Mock 编写 |
-| 代码审查 | `error-handling-reviewer` | 错误处理审查 |
+| 代码审查 | `python-error-handling-reviewer` | 错误处理审查 |
 | 代码审查 | `python-concurrency-reviewer` | 并发安全审查 |
-| 代码审查 | `dependency-reviewer` | 依赖管理审查 |
-| 代码审查 | `performance-reviewer` | 性能审查 |
-| 代码审查 | `security-reviewer` | 安全审查 |
-| 代码审查 | `database-reviewer` | 数据库审查 |
-| 代码审查 | `logging-reviewer` | 日志规范审查 |
+| 代码审查 | `python-dependency-reviewer` | 依赖管理审查 |
+| 代码审查 | `python-performance-reviewer` | 性能审查 |
+| 代码审查 | `python-security-reviewer` | 安全审查 |
+| 代码审查 | `python-database-reviewer` | 数据库审查 |
+| 代码审查 | `python-logging-reviewer` | 日志规范审查 |
 | 代码审查 | `python-typing-reviewer` | 类型注解审查 |
-| 代码审查 | `api-design-reviewer` | API 设计审查 |
+| 代码审查 | `python-api-design-reviewer` | API 设计审查 |
 | 文档 | `python-api-doc-generator` | OpenAPI 文档生成 |
 
 ---
@@ -66,7 +66,7 @@ triggers:
 ┌─────────────────────────────────────────────────────────────────┐
 │                      阶段一：准备与文档                           │
 ├─────────────────────────────────────────────────────────────────┤
-│  feature-development-workflow  →  需求澄清、任务拆解             │
+│  python-feature-development-workflow  →  需求澄清、任务拆解      │
 │  python-doc-generator          →  项目结构、模块文档             │
 └─────────────────────────────────────────────────────────────────┘
                               ↓
@@ -93,15 +93,15 @@ triggers:
 ┌─────────────────────────────────────────────────────────────────┐
 │                      阶段四：质量审查                             │
 ├─────────────────────────────────────────────────────────────────┤
-│  error-handling-reviewer       →  错误处理                        │
-│  python-concurrency-reviewer  →  并发安全                        │
-│  dependency-reviewer          →  依赖管理                        │
-│  performance-reviewer         →  性能表现                        │
-│  security-reviewer            →  安全漏洞                        │
-│  database-reviewer             →  数据库操作                      │
-│  logging-reviewer             →  日志规范                        │
-│  python-typing-reviewer        →  类型注解                       │
-│  api-design-reviewer          →  API 设计                        │
+│  python-error-handling-reviewer →  错误处理                     │
+│  python-concurrency-reviewer    →  并发安全                     │
+│  python-dependency-reviewer     →  依赖管理                     │
+│  python-performance-reviewer    →  性能表现                     │
+│  python-security-reviewer       →  安全漏洞                     │
+│  python-database-reviewer       →  数据库操作                   │
+│  python-logging-reviewer        →  日志规范                     │
+│  python-typing-reviewer         →  类型注解                     │
+│  python-api-design-reviewer     →  API 设计                     │
 └─────────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────────┐

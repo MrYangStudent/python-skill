@@ -1,5 +1,5 @@
 ---
-name: database-reviewer
+name: python-database-reviewer
 description: >
   Python 数据库审查技能。当用户要求审查数据库代码、检查 SQL 性能、
   或请求进行数据库审查时触发。专门用于审查数据库相关代码的正确性和性能。

@@ -1,5 +1,5 @@
 ---
-name: feature-development-workflow
+name: python-feature-development-workflow
 description: >
   Python 新功能开发工作流。当用户要求开发新功能、按工作流开发、
   或触发新功能开发流程时使用。遵循 TDD/BDD 开发模式。

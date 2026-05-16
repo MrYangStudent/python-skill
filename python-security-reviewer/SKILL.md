@@ -1,5 +1,5 @@
 ---
-name: security-reviewer
+name: python-security-reviewer
 description: >
   Python 安全审查技能。当用户要求审查代码安全性、检查漏洞、
   或请求进行安全审查时触发。专门用于发现和修复 Python 代码中的安全漏洞，

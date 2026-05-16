@@ -30,21 +30,21 @@ python-skill/
 ├── 📂 开发流程技能/
 │   ├── python-project-rules/             # 项目治理规则
 │   ├── python-full-dev-workflow/         # 完整开发工作流
-│   └── feature-development-workflow/      # 新功能开发工作流
+│   └── python-feature-development-workflow/ # 新功能开发工作流
 │
 ├── 📂 测试技能/
 │   └── python-test-generator/             # pytest 测试生成
 │
 ├── 📂 代码审查技能/
-│   ├── error-handling-reviewer/         # 错误处理审查
+│   ├── python-error-handling-reviewer/  # 错误处理审查
 │   ├── python-concurrency-reviewer/      # 并发安全审查
-│   ├── security-reviewer/                # 安全审查
-│   ├── database-reviewer/               # 数据库审查
-│   ├── dependency-reviewer/             # 依赖管理审查
-│   ├── performance-reviewer/             # 性能审查
-│   ├── logging-reviewer/                # 日志规范审查
+│   ├── python-security-reviewer/         # 安全审查
+│   ├── python-database-reviewer/         # 数据库审查
+│   ├── python-dependency-reviewer/       # 依赖管理审查
+│   ├── python-performance-reviewer/      # 性能审查
+│   ├── python-logging-reviewer/          # 日志规范审查
 │   ├── python-typing-reviewer/          # 类型注解审查
-│   └── api-design-reviewer/             # API 设计审查
+│   └── python-api-design-reviewer/      # API 设计审查
 │
 └── 📂 文档生成技能/
     ├── python-doc-generator/              # 代码文档生成
@@ -61,7 +61,7 @@ python-skill/
 |------|------|
 | [python-project-rules](./python-project-rules/) | 项目治理规则，进度同步、README 联动 |
 | [python-full-dev-workflow](./python-full-dev-workflow/) | 完整开发工作流，全链路整合 |
-| [feature-development-workflow](./feature-development-workflow/) | 新功能开发，需求拆解、TDD/BDD |
+| [python-feature-development-workflow](./python-feature-development-workflow/) | 新功能开发，需求拆解、TDD/BDD |
 
 ### 测试生成
 
@@ -73,15 +73,15 @@ python-skill/
 
 | 技能 | 描述 |
 |------|------|
-| [error-handling-reviewer](./error-handling-reviewer/) | 异常包装、参数校验审计 |
+| [python-error-handling-reviewer](./python-error-handling-reviewer/) | 异常包装、参数校验审计 |
 | [python-concurrency-reviewer](./python-concurrency-reviewer/) | 线程安全、GIL 理解、异步审查 |
-| [security-reviewer](./security-reviewer/) | 敏感信息、注入攻击、依赖漏洞 |
-| [database-reviewer](./database-reviewer/) | 连接池、事务、N+1 检测 |
-| [dependency-reviewer](./dependency-reviewer/) | 第三方依赖必要性、安全性 |
-| [performance-reviewer](./performance-reviewer/) | 资源关闭、内存泄漏、async 优化 |
-| [logging-reviewer](./logging-reviewer/) | 日志级别、脱敏处理、结构化日志 |
+| [python-security-reviewer](./python-security-reviewer/) | 敏感信息、注入攻击、依赖漏洞 |
+| [python-database-reviewer](./python-database-reviewer/) | 连接池、事务、N+1 检测 |
+| [python-dependency-reviewer](./python-dependency-reviewer/) | 第三方依赖必要性、安全性 |
+| [python-performance-reviewer](./python-performance-reviewer/) | 资源关闭、内存泄漏、async 优化 |
+| [python-logging-reviewer](./python-logging-reviewer/) | 日志级别、脱敏处理、结构化日志 |
 | [python-typing-reviewer](./python-typing-reviewer/) | TypeHint 完整性、Protocol 使用 |
-| [api-design-reviewer](./api-design-reviewer/) | RESTful 规范、HTTP 语义 |
+| [python-api-design-reviewer](./python-api-design-reviewer/) | RESTful 规范、HTTP 语义 |
 
 ### 文档生成
 
@@ -143,7 +143,7 @@ pip install pytest mypy black isort safety
                             ↓
 ┌─────────────────────────────────────────────────────────┐
 │                    阶段一：准备与文档                     │
-│  feature-development-workflow → 需求澄清、任务拆解        │
+│  python-feature-development-workflow → 需求澄清、任务拆解  │
 │  python-doc-generator         → 项目结构、模块文档        │
 └─────────────────────────────────────────────────────────┘
                             ↓
