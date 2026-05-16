@@ -14,10 +14,12 @@
 
 - 🚀 **Full Lifecycle Coverage**: From requirements analysis → code implementation → testing → quality review → documentation → deployment
 - 🤖 **AI-Friendly**: All documents include AI-Usage comment blocks for Cline/Cursor learning
-- 📦 **15+ Specialized Skills**: Covering all aspects of development
+- 📦 **19+ Specialized Skills**: Covering all aspects of development
 - 🛡️ **Strict Standards**: PEP 8, Google/NumPy docstring conventions
-- 🔒 **Type Safety**: Full TypeHint + Mypy static checking
+- 🔒 **Type Safety**: Full TypeHint + Mypy static checking (Python 3.10+)
 - 🧩 **Modular Design**: Skills can be used independently or combined
+- 🏗️ **Architecture Level**: Architecture review, refactoring review, configuration review
+- 🔄 **CI/CD Ready**: GitHub Actions, Docker, pre-commit, quality gates
 
 ---
 
@@ -31,7 +33,8 @@ python-skill/
 ├── 📂 Development Workflow/
 │   ├── python-project-rules/              # Project governance rules
 │   ├── python-full-dev-workflow/           # Complete development workflow
-│   └── python-feature-development-workflow/ # Feature development workflow
+│   ├── python-feature-development-workflow/ # Feature development workflow
+│   └── python-ci-cd-workflow/              # CI/CD pipeline workflow
 │
 ├── 📂 Testing/
 │   └── python-test-generator/               # pytest test generation
@@ -45,7 +48,10 @@ python-skill/
 │   ├── python-performance-reviewer/        # Performance review
 │   ├── python-logging-reviewer/            # Logging standards review
 │   ├── python-typing-reviewer/             # Type annotation review
-│   └── python-api-design-reviewer/         # API design review
+│   ├── python-api-design-reviewer/         # API design review
+│   ├── python-refactor-reviewer/           # Code refactoring review
+│   ├── python-config-reviewer/             # Configuration management review
+│   └── python-architecture-reviewer/       # Architecture design review
 │
 └── 📂 Documentation/
     ├── python-doc-generator/               # Code documentation generator
@@ -63,6 +69,7 @@ python-skill/
 | [python-project-rules](./python-project-rules/) | Project governance, progress sync, README sync |
 | [python-full-dev-workflow](./python-full-dev-workflow/) | Full development workflow integration |
 | [python-feature-development-workflow](./python-feature-development-workflow/) | Feature dev with TDD/BDD, requirements breakdown |
+| [python-ci-cd-workflow](./python-ci-cd-workflow/) | GitHub Actions, Docker, quality gates, release automation |
 
 ### Testing
 
@@ -81,8 +88,11 @@ python-skill/
 | [python-dependency-reviewer](./python-dependency-reviewer/) | Third-party dependency necessity, security |
 | [python-performance-reviewer](./python-performance-reviewer/) | Resource cleanup, memory leaks, async optimization |
 | [python-logging-reviewer](./python-logging-reviewer/) | Log levels, data masking, structured logging |
-| [python-typing-reviewer](./python-typing-reviewer/) | TypeHint completeness, Protocol usage |
+| [python-typing-reviewer](./python-typing-reviewer/) | TypeHint completeness, Protocol usage, Python 3.10+ syntax |
 | [python-api-design-reviewer](./python-api-design-reviewer/) | RESTful standards, HTTP semantics |
+| [python-refactor-reviewer](./python-refactor-reviewer/) | DRY, complexity, Pythonic idioms, design patterns |
+| [python-config-reviewer](./python-config-reviewer/) | pydantic-settings, .env, pyproject.toml, 12-Factor App |
+| [python-architecture-reviewer](./python-architecture-reviewer/) | Layered architecture, dependency direction, SOLID principles |
 
 ### Documentation
 
@@ -120,6 +130,9 @@ pip install pytest mypy black isort safety
 "Security review"
 "Code review"
 "Type annotation review"
+"Architecture review"
+"Refactoring review"
+"Config review"
 
 # Test generation
 "Generate tests"
@@ -128,6 +141,10 @@ pip install pytest mypy black isort safety
 # Documentation
 "Generate API documentation"
 "Generate docstring"
+
+# CI/CD
+"Setup CI/CD"
+"Configure GitHub Actions"
 ```
 
 ---
@@ -164,6 +181,7 @@ pip install pytest mypy black isort safety
 │                    Phase 4: Quality Review               │
 │  error / concurrency / security / performance           │
 │  database / logging / typing / api-design               │
+│  refactor / config / architecture                       │
 └─────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────┐
@@ -173,8 +191,9 @@ pip install pytest mypy black isort safety
 └─────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────┐
-│                    Phase 6: Validation & Deploy         │
-│  pytest + mypy + uvicorn + API endpoint tests          │
+│                    Phase 6: CI/CD & Deploy              │
+│  python-ci-cd-workflow                                   │
+│  - Lint + Type check + Test + Build + Deploy           │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -210,6 +229,7 @@ safety check
 - 👥 Team coding standards alignment
 - 🌐 Python Web development (FastAPI/Django/Flask)
 - 📊 Data processing and scientific computing projects
+- 🔄 CI/CD pipeline setup and automation
 
 ---
 

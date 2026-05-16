@@ -99,7 +99,7 @@ Feature/
 ```python
 class X:
     def __init__(self) -> None:
-        self._data: Dict[str, Any] = {}
+        self._data: dict[str, object] = {}
 ```
 
 ### API 设计
@@ -151,13 +151,11 @@ python -m pytest -v tests/integration/
 ### 类型注解（必须）
 
 ```python
-from typing import Optional, List, Dict, Any, Union
-
 def process_data(
     user_id: str,
-    items: List[Dict[str, Any]],
-    timeout: Optional[int] = None,
-) -> Dict[str, Any]:
+    items: list[dict[str, object]],
+    timeout: int | None = None,
+) -> dict[str, object]:
     """处理用户数据的核心函数。
     
     Args:
@@ -188,7 +186,7 @@ class DataProcessor:
         config: 配置字典
     """
     
-    def __init__(self, name: str, config: Optional[Dict[str, Any]] = None) -> None:
+    def __init__(self, name: str, config: dict[str, object] | None = None) -> None:
         """初始化数据处理器。
         
         Args:
@@ -220,6 +218,35 @@ class DataProcessor:
 | 错误 | 🔴 | 必须修复 | 立即修复 |
 | 警告 | 🟡 | 建议修复 | 评审后决定 |
 | 提示 | 💡 | 可选优化 | 视情况 |
+
+---
+
+## AI 使用示例
+
+```python
+# AI-Usage-Begin
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃  AI 使用示例：新功能开发工作流                          ┃
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+#
+# 场景：按照 TDD/BDD 模式开发新功能
+# 输入：功能需求描述
+# 输出：完整的功能代码 + 单元测试 + 集成验证
+#
+# 工作流程：
+#   1. 问题定义：澄清目的、场景、结构、约束、验收标准
+#   2. 任务拆解：拆分为独立可验证的微模块
+#   3. 代码生成：逐模块实现（设计 → 代码 → 测试 → 验证）
+#   4. 集成验证：静态检查 + 格式化 + 单元测试 + 集成测试
+#   5. 沉淀：更新文档和设计决策记录
+#
+# 核心原则：
+#   - 小步快跑：每次只完成一个可验证的微模块
+#   - 测试驱动：单元测试与代码同步生成
+#   - 渐进式交付：先骨架后填充，先能用后完善
+#
+# AI-Usage-End
+```
 
 ---
 

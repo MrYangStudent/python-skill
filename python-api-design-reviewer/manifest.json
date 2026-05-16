@@ -1,0 +1,29 @@
+{
+  "name": "python-api-design-reviewer",
+  "version": "1.0.0",
+  "description": "Python API 设计审查技能。当用户要求审查 API 设计、检查 RESTful 规范、或请求进行 API 审查时触发。专门用于审查 API 设计的合理性和规范性。",
+  "triggers": [
+    "API 设计审查",
+    "RESTful 检查",
+    "API review",
+    "接口审查",
+    "API 规范"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "api",
+    "restful",
+    "http",
+    "code-review"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-api-doc-generator",
+    "python-security-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

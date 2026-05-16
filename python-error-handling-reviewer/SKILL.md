@@ -104,30 +104,30 @@ except SomeError as e:
 
 ### 4. 类型注解缺失
 
+> **注意**：类型注解的详细审查请使用 `python-typing-reviewer` 技能，本节仅检查与错误处理直接相关的类型问题。
+
 **检查模式：**
 ```python
 # ✗ 缺少类型注解
 def process_data(data):
     return data.get("result")
 
-# ✓ 完整类型注解
-from typing import Optional, Dict, Any
-
-def process_data(data: Dict[str, Any]) -> Optional[str]:
+# ✓ 完整类型注解（Python 3.10+）
+def process_data(data: dict[str, object]) -> str | None:
     return data.get("result")
 
 # ✗ 不一致的类型注解
 def function(a: str) -> int:  # 实际返回 None
     return None
 
-# ✓ 标注 Optional
-def function(a: str) -> Optional[str]:
+# ✓ 标注可空返回
+def function(a: str) -> str | None:
     return None
 ```
 
 **修复建议：**
 - 所有公共函数必须有类型注解
-- 使用 `Optional[T]` 明确可能返回 None 的情况
+- 使用 `X | None` 明确可能返回 None 的情况（Python 3.10+）
 - 定期运行 mypy 检查
 
 ### 5. 参数校验
@@ -253,9 +253,8 @@ class ValidationError(Exception):
     """验证异常。"""
     pass
 
-# 4. 可选类型标注
-from typing import Optional
-def get_value() -> Optional[str]:
+# 4. 可选类型标注（Python 3.10+）
+def get_value() -> str | None:
     return None
 
 # 5. 结构化日志
@@ -295,6 +294,52 @@ data = f.read()
 # 5. 缺少类型注解
 def function(data):  # ✗
     return data.get("key")
+```
+
+---
+
+## AI 使用示例
+
+---
+
+## 与其他技能的边界
+
+| 重叠领域 | 本技能关注 | 其他技能关注 |
+|---------|----------|-----------|
+| 类型注解 | 与错误处理直接相关的类型（如返回值可空） | `python-typing-reviewer` 负责完整的类型审查 |
+| 资源关闭 | 未使用 context manager 导致的资源泄漏 | `python-database-reviewer` 负责数据库连接关闭 |
+| 异常日志 | 异常处理中的日志记录规范 | `python-logging-reviewer` 负责完整的日志规范 |
+| 安全漏洞 | 错误信息泄露（如堆栈暴露） | `python-security-reviewer` 负责完整的安全审查 |
+
+---
+
+## AI 使用示例
+
+```python
+# AI-Usage-Begin
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃  AI 使用示例：错误处理审查                              ┃
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+#
+# 场景：审查 Python 代码中的错误处理质量
+# 输入：项目代码文件
+# 输出：错误处理审查报告（按严重程度分级）
+#
+# 审查步骤：
+#   1. 扫描所有 try-except 块，检查裸 except
+#   2. 检查异常是否被静默忽略（pass）
+#   3. 检查异常消息是否包含足够上下文
+#   4. 检查 raise from 链是否正确
+#   5. 检查资源是否使用 context manager
+#
+# 常见问题模式：
+#   - 裸 except: → 改为 except SpecificException
+#   - 静默忽略: → 至少记录 logger.warning
+#   - 缺少上下文: → raise ValueError(f"context: {detail}")
+#   - 资源泄漏: → 使用 with 语句
+#   - 缺少 raise from: → raise ... from e
+#
+# AI-Usage-End
 ```
 
 ---

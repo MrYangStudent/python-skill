@@ -1,0 +1,29 @@
+{
+  "name": "python-test-generator",
+  "version": "1.0.0",
+  "description": "Python 测试生成技能。当用户要求为代码生成测试、编写单元测试、创建 test 文件、或请求生成 pytest 测试用例时触发。专门用于生成完整的、可运行的测试套件。",
+  "triggers": [
+    "生成测试",
+    "写单元测试",
+    "测试生成员",
+    "pytest 测试",
+    "单元测试"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "testing",
+    "pytest",
+    "unit-test",
+    "mock"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-full-dev-workflow",
+    "python-feature-development-workflow",
+    "python-typing-reviewer"
+  ]
+}

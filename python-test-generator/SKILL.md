@@ -45,7 +45,6 @@ Python 测试专家，精通 pytest 框架，擅长生成高质量、可维护�
 
 ```python
 import pytest
-from typing import List
 
 
 def add(a: int, b: int) -> int:
@@ -107,7 +106,6 @@ class TestAdd:
 
 ```python
 import pytest
-from typing import List
 
 
 class ValidationError(Exception):
@@ -237,10 +235,9 @@ class TestDataProcessor:
 ```python
 import pytest
 import asyncio
-from typing import Optional
 
 
-async def fetch_data(endpoint: str, timeout: Optional[int] = None) -> dict:
+async def fetch_data(endpoint: str, timeout: int | None = None) -> dict:
     """异步获取数据。"""
     await asyncio.sleep(0.1)  # 模拟异步操作
     return {"endpoint": endpoint, "data": [1, 2, 3]}
@@ -287,10 +284,9 @@ class TestWithFixtures:
 
 ```python
 import pytest
-from typing import List
 
 
-def filter_items(items: List[int], predicate: callable) -> List[int]:
+def filter_items(items: list[int], predicate: Callable[[int], bool]) -> list[int]:
     """过滤列表项。"""
     return [item for item in items if predicate(item)]
 
@@ -309,9 +305,9 @@ class TestFilterItems:
     )
     def test_filter(
         self, 
-        items: List[int], 
-        predicate: callable, 
-        expected: List[int]
+        items: list[int], 
+        predicate: Callable[[int], bool], 
+        expected: list[int]
     ) -> None:
         """参数化测试用例。"""
         result = filter_items(items, predicate)
@@ -382,7 +378,6 @@ AI-Usage-End
 """
 
 import pytest
-from typing import List, Optional
 
 
 # 测试目标模块

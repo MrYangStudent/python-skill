@@ -79,7 +79,7 @@ triggers:
 
 ```python
 # ✅ GET - 获取资源列表
-@app.get("/users", response_model=List[User])
+@app.get("/users", response_model=list[User])
 async def list_users(
     skip: int = Query(0, ge=0),
     limit: int = Query(100, ge=1, le=1000)
@@ -151,17 +151,16 @@ async def get_user(user_id: str):
 
 ```python
 from pydantic import BaseModel, Field
-from typing import Optional
 
 # ✅ 推荐：使用 Pydantic 模型
 class UserCreate(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
     email: str = Field(..., pattern=r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
-    age: Optional[int] = Field(None, ge=0, le=150)
+    age: int | None = Field(None, ge=0, le=150)
 
 class UserUpdate(BaseModel):
-    name: Optional[str] = Field(None, min_length=1, max_length=100)
-    email: Optional[str] = Field(None)
+    name: str | None = Field(None, min_length=1, max_length=100)
+    email: str | None = Field(None)
 
 # ✅ 验证异常处理
 from fastapi import HTTPException, status
@@ -189,8 +188,8 @@ class ErrorResponse(BaseModel):
     """统一的错误响应格式。"""
     error: str = Field(..., description="错误代码")
     message: str = Field(..., description="错误消息")
-    details: Optional[List[dict]] = Field(None, description="详细错误信息")
-    request_id: Optional[str] = Field(None, description="请求追踪 ID")
+    details: list[dict] | None = Field(None, description="详细错误信息")
+    request_id: str | None = Field(None, description="请求追踪 ID")
 
 # ✅ 示例错误响应
 {
@@ -234,14 +233,14 @@ async def validation_exception_handler(request: Request, exc: ValidationError):
 **检查模式**：
 
 ```python
-from typing import Generic, TypeVar, List
+from typing import Generic, TypeVar
 from pydantic import BaseModel
 
 T = TypeVar("T")
 
 class PaginatedResponse(BaseModel, Generic[T]):
     """统一分页响应格式。"""
-    items: List[T]
+    items: list[T]
     total: int
     skip: int
     limit: int
@@ -341,6 +340,47 @@ async def list_users(version: str = "1"):
 - 使用 kebab-case 命名
 - 添加超媒体链接（HATEOAS）
 - 考虑添加 API 文档
+```
+
+---
+
+## 与其他技能的边界
+
+| 重叠领域 | 本技能关注 | 其他技能关注 |
+|---------|----------|-----------|
+| API 安全 | 认证授权接口设计 | `python-security-reviewer` 负责完整的安全审查 |
+| API 类型 | 请求/响应模型的类型设计 | `python-typing-reviewer` 负责类型注解完整性 |
+| API 文档 | API 设计规范和接口质量 | `python-api-doc-generator` 负责文档生成 |
+
+---
+
+## AI 使用示例
+
+```python
+# AI-Usage-Begin
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃  AI 使用示例：API 设计审查                              ┃
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+#
+# 场景：审查 Python Web API 的设计质量和规范性
+# 输入：项目路由/控制器代码文件
+# 输出：API 设计审查报告（按严重程度分级）
+#
+# 审查步骤：
+#   1. 检查 URL 结构是否符合 RESTful 规范
+#   2. 检查 HTTP 方法和状态码使用是否正确
+#   3. 检查请求验证（Pydantic 模型）
+#   4. 检查错误响应格式是否统一
+#   5. 检查分页和版本控制
+#
+# 常见问题模式：
+#   - URL 包含动词: → 改为资源名词 + HTTP 方法
+#   - 404 返回 200: → 抛出 HTTPException
+#   - 缺少请求验证: → 添加 Pydantic 模型
+#   - 错误格式不统一: → 定义 ErrorResponse 基类
+#   - 缺少分页: → 添加 skip/limit 参数
+#
+# AI-Usage-End
 ```
 
 ---

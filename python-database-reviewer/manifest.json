@@ -1,0 +1,30 @@
+{
+  "name": "python-database-reviewer",
+  "version": "1.0.0",
+  "description": "Python 数据库审查技能。当用户要求审查数据库代码、检查 SQL 性能、或请求进行数据库审查时触发。专门用于审查数据库相关代码的正确性和性能。",
+  "triggers": [
+    "数据库审查",
+    "SQL 检查",
+    "database review",
+    "连接池配置",
+    "N+1 查询",
+    "事务检查"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "database",
+    "sql",
+    "orm",
+    "code-review"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-security-reviewer",
+    "python-performance-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

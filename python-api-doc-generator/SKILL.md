@@ -13,52 +13,52 @@ triggers:
 
 # Python API 文档生成器
 
-Generate comprehensive API documentation for Python Web projects including OpenAPI 3.0 specs, Postman collections, and curl command examples.
+为 Python Web 项目生成完整的 API 文档，包括 OpenAPI 3.0 规范、Postman 集合和 curl 命令示例。
 
-## Workflow
+## 工作流程
 
-### Step 1: Discover API Endpoints
+### 步骤 1：发现 API 端点
 
-Scan the Python project to identify all HTTP endpoints:
+扫描 Python 项目以识别所有 HTTP 端点：
 
 ```bash
-# Find all FastAPI route decorators
+# 查找所有 FastAPI 路由装饰器
 rg -t py "@app\.(get|post|put|delete|patch)\(" --no-heading
 
-# Find Flask route decorators
+# 查找 Flask 路由装饰器
 rg -t py "@app\.route\(" --no-heading
 
-# Find class-based views
+# 查找基于类的视图
 rg -t py "class.*View" --type py --files-with-matches
 ```
 
-### Step 2: Analyze Handler Signatures
+### 步骤 2：分析处理函数签名
 
-Extract endpoint metadata from handler functions:
+从处理函数中提取端点元数据：
 
-1. **HTTP Method**: Look for `@app.get()`, `@app.post()`, etc.
-2. **Path Pattern**: Parse route decorators
-3. **Parameters**: 
-   - Path params: `{item_id}` in routes
-   - Query params: `Query(...)`, `Request` objects
-   - Header params: `Header(...)`
-4. **Request Body**: Parse Pydantic models or request data
-5. **Response**: Identify response models and status codes
+1. **HTTP 方法**：查找 `@app.get()`、`@app.post()` 等
+2. **路径模式**：解析路由装饰器
+3. **参数**：
+   - 路径参数：路由中的 `{item_id}`
+   - 查询参数：`Query(...)`、`Request` 对象
+   - 请求头参数：`Header(...)`
+4. **请求体**：解析 Pydantic 模型或请求数据
+5. **响应**：识别响应模型和状态码
 
-### Step 3: Generate OpenAPI 3.0 Spec
+### 步骤 3：生成 OpenAPI 3.0 规范
 
-Use the provided template or generate programmatically:
+使用提供的模板或以编程方式生成：
 
 ```yaml
 openapi: 3.0.3
 info:
-  title: {ProjectName} API
+  title: {项目名称} API
   version: 1.0.0
-  description: Auto-generated API documentation
+  description: 自动生成的 API 文档
 paths:
   /users/{user_id}:
     get:
-      summary: Get user by ID
+      summary: 根据 ID 获取用户
       parameters:
         - name: user_id
           in: path
@@ -67,16 +67,16 @@ paths:
             type: string
       responses:
         '200':
-          description: Success
+          description: 成功
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
         '404':
-          description: Not found
+          description: 未找到
 ```
 
-## Framework Examples
+## 框架示例
 
 ### FastAPI
 
@@ -97,14 +97,14 @@ class UserCreate(BaseModel):
 
 @app.get("/users/{user_id}", response_model=User)
 async def get_user(
-    user_id: str = Path(..., description="User ID")
+    user_id: str = Path(..., description="用户 ID")
 ) -> User:
-    """Get user by ID."""
+    """根据 ID 获取用户。"""
     ...
 
 @app.post("/users", response_model=User, status_code=201)
 async def create_user(user: UserCreate) -> User:
-    """Create a new user."""
+    """创建新用户。"""
     ...
 ```
 
@@ -117,57 +117,96 @@ app = Flask(__name__)
 
 @app.route("/users/<user_id>", methods=["GET"])
 def get_user(user_id):
-    """Get user by ID."""
+    """根据 ID 获取用户。"""
     return jsonify({"id": user_id, "name": "..."})
 
 @app.route("/users", methods=["POST"])
 def create_user():
-    """Create a new user."""
+    """创建新用户。"""
     data = request.get_json()
     return jsonify({"id": "...", **data}), 201
 ```
 
-## Output Formats
+## 输出格式
 
 ### OpenAPI 3.0
-- Format: YAML or JSON
-- File: `openapi.yaml` or `openapi.json`
-- Standards: OpenAPI 3.0.3 specification
+- 格式：YAML 或 JSON
+- 文件：`openapi.yaml` 或 `openapi.json`
+- 标准：OpenAPI 3.0.3 规范
 
-### Postman Collection v2.1
-- Format: JSON
-- File: `postman_collection.json`
-- Import: Postman app → Import → Select file
+### Postman 集合 v2.1
+- 格式：JSON
+- 文件：`postman_collection.json`
+- 导入：Postman 应用 → Import → 选择文件
 
-### curl Commands
-- Format: Shell script or Markdown
-- File: `curl_commands.sh` or `api_reference.md`
-- Usage: Copy-paste or shell execution
+### curl 命令
+- 格式：Shell 脚本或 Markdown
+- 文件：`curl_commands.sh` 或 `api_reference.md`
+- 用法：复制粘贴或 Shell 执行
 
-## Common Python Web Frameworks
+## 常见 Python Web 框架
 
-| Framework | Auto-doc | Best for |
-|-----------|----------|----------|
-| FastAPI | Swagger UI, ReDoc | Modern APIs, type safety |
-| Flask | flask-swagger | Lightweight APIs |
-| Django REST | DRF Spectacular | Django projects |
-| Starlette | Built-in | ASGI apps |
+| 框架 | 自动文档 | 适用场景 |
+|------|---------|---------|
+| FastAPI | Swagger UI, ReDoc | 现代 API，类型安全 |
+| Flask | flask-swagger | 轻量级 API |
+| Django REST | DRF Spectacular | Django 项目 |
+| Starlette | 内置 | ASGI 应用 |
 
-## Example Usage
+## 使用示例
 
 ```
-# Generate all documentation for current project
-Analyze Python project → Generate OpenAPI → Generate Postman → Generate curl
+# 为当前项目生成所有文档
+分析 Python 项目 → 生成 OpenAPI → 生成 Postman → 生成 curl
 
-# Generate specific format only
-Generate OpenAPI spec only
-Generate Postman collection only
-Generate curl commands only
+# 仅生成特定格式
+仅生成 OpenAPI 规范
+仅生成 Postman 集合
+仅生成 curl 命令
 ```
 
-## Notes
+## 注意事项
 
-- Handle both synchronous and asynchronous handlers
-- Support middleware chain documentation
-- Include authentication/authorization context
-- Document error response schemas
+- 处理同步和异步处理函数
+- 支持中间件链文档
+- 包含认证/授权上下文
+- 文档化错误响应模型
+
+---
+
+## AI 使用示例
+
+```python
+# AI-Usage-Begin
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃  AI 使用示例：API 文档生成                              ┃
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+#
+# 场景：为 Python Web 项目生成 API 文档
+# 输入：FastAPI/Flask/Django 项目代码
+# 输出：OpenAPI 3.0 规范 + Postman 集合 + curl 命令
+#
+# 生成步骤：
+#   1. 扫描项目发现所有 HTTP 端点
+#   2. 分析处理函数签名（参数、请求体、响应模型）
+#   3. 生成 OpenAPI 3.0 YAML/JSON 规范
+#   4. 生成 Postman Collection v2.1
+#   5. 生成 curl 命令示例
+#
+# 支持框架：
+#   - FastAPI：自动从 Pydantic 模型提取 Schema
+#   - Flask：从路由装饰器提取端点信息
+#   - Django REST：从 Serializer 提取字段定义
+#
+# AI-Usage-End
+```
+
+---
+
+## 触发词
+
+- "生成 API 文档"
+- "生成 OpenAPI"
+- "OpenAPI 规范"
+- "API 文档"
+- "FastAPI 文档"

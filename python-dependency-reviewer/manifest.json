@@ -1,0 +1,28 @@
+{
+  "name": "python-dependency-reviewer",
+  "version": "1.0.0",
+  "description": "Python 依赖管理审查技能。当用户要求审查依赖、检查第三方库、或请求进行依赖审查时触发。专门用于审查项目依赖的必要性和安全性。",
+  "triggers": [
+    "依赖审查",
+    "依赖检查",
+    "dependency review",
+    "第三方库审查",
+    "依赖管理"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "dependency",
+    "requirements",
+    "security",
+    "code-review"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-security-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

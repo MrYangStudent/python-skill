@@ -436,4 +436,44 @@ service.py:30: error: Returning Any from function
 - "python typing check"
 - "mypy review"
 - "check type hints"
-- "review typing" 
+- "review typing"
+
+---
+
+## 与其他技能的边界
+
+| 重叠领域 | 本技能关注 | 其他技能关注 |
+|---------|----------|-----------|
+| 错误返回类型 | 类型注解的完整性和现代语法 | `python-error-handling-reviewer` 关注错误处理逻辑 |
+| API 类型 | 函数签名和返回值的类型准确性 | `python-api-design-reviewer` 关注 API 设计规范 |
+
+---
+
+## AI 使用示例
+
+```python
+# AI-Usage-Begin
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃  AI 使用示例：类型注解审查                              ┃
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+#
+# 场景：审查 Python 代码中类型注解的完整性和正确性
+# 输入：项目代码文件
+# 输出：类型注解审查报告（按严重程度分级）
+#
+# 审查步骤：
+#   1. 检查是否使用了 Python 3.10+ 现代语法（list/dict/| 替代 List/Dict/Union）
+#   2. 检查公共函数是否缺失类型注解
+#   3. 检查 Any 滥用和类型准确性
+#   4. 检查 Protocol / TypeAlias / TypeGuard 使用
+#   5. 运行 mypy --strict 检查
+#
+# 常见问题模式：
+#   - List[str] → list[str]（Python 3.10+）
+#   - Optional[X] → X | None（Python 3.10+）
+#   - Union[A, B] → A | B（Python 3.10+）
+#   - 缺少返回类型: → 添加 -> ReturnType
+#   - Any 滥用: → 使用具体类型或 Protocol
+#
+# AI-Usage-End
+```

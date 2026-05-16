@@ -1,0 +1,30 @@
+{
+  "name": "python-config-reviewer",
+  "version": "1.0.0",
+  "description": "Python 配置管理审查技能。当用户要求审查配置管理、检查环境变量、或请求进行配置审查时触发。专门用于审查 Python 项目中配置管理的规范性和安全性，确保 12-Factor App 合规。",
+  "triggers": [
+    "配置审查",
+    "环境变量检查",
+    "config review",
+    "配置管理",
+    "pyproject.toml 审查"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "configuration",
+    "pydantic-settings",
+    "12-factor",
+    "code-review"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-security-reviewer",
+    "python-dependency-reviewer",
+    "python-logging-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

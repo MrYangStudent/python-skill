@@ -1,0 +1,29 @@
+{
+  "name": "python-concurrency-reviewer",
+  "version": "1.0.0",
+  "description": "Python 并发安全审查技能。当用户要求审查并发代码、检查线程安全、或请求进行并发审查时触发。专门用于审查 Python 代码中并发相关的正确性和安全性。",
+  "triggers": [
+    "并发审查",
+    "线程安全检查",
+    "concurrency review",
+    "异步审查",
+    "并发安全"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "concurrency",
+    "threading",
+    "async",
+    "code-review"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-performance-reviewer",
+    "python-error-handling-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

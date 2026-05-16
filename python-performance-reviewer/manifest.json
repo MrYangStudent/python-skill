@@ -1,0 +1,29 @@
+{
+  "name": "python-performance-reviewer",
+  "version": "1.0.0",
+  "description": "Python 性能审查技能。当用户要求审查代码性能、检查性能问题、或请求进行性能优化时触发。专门用于发现和修复 Python 代码中的性能瓶颈。",
+  "triggers": [
+    "性能审查",
+    "性能检查",
+    "performance review",
+    "性能优化",
+    "profiling"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "performance",
+    "optimization",
+    "profiling",
+    "code-review"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-concurrency-reviewer",
+    "python-database-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

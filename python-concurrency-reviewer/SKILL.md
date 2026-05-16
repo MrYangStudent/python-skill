@@ -351,6 +351,46 @@ python -m py_compile async_module.py
 
 ---
 
+## 与其他技能的边界
+
+| 重叠领域 | 本技能关注 | 其他技能关注 |
+|---------|----------|-----------|
+| 异步代码优化 | 并发安全和竞态条件 | `python-performance-reviewer` 关注异步代码性能（串行 vs 并行） |
+| 异步阻塞 | 同步库在 async 函数中阻塞事件循环 | `python-performance-reviewer` 关注 I/O 性能优化 |
+| 线程资源 | 线程安全和锁机制 | `python-error-handling-reviewer` 关注资源泄漏 |
+
+---
+
+## AI 使用示例
+
+```python
+# AI-Usage-Begin
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃  AI 使用示例：并发安全审查                              ┃
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+#
+# 场景：审查 Python 代码中的并发安全性
+# 输入：项目代码文件
+# 输出：并发安全审查报告（按严重程度分级）
+#
+# 审查步骤：
+#   1. 扫描所有 threading/asyncio 相关代码
+#   2. 识别共享可变状态，检查锁保护
+#   3. 检查 async 函数中是否使用了同步阻塞库
+#   4. 检查 daemon 线程是否有正确的退出机制
+#   5. 检查 asyncio 任务的取消和超时处理
+#
+# 常见问题模式：
+#   - 共享状态无锁保护: → 添加 threading.Lock / asyncio.Lock
+#   - async 中调用同步库: → 替换为异步等效库（如 requests → aiohttp）
+#   - daemon 线程无退出: → 使用 Event 或 context 停止
+#   - 缺少超时: → 添加 asyncio.wait_for / asyncio.timeout
+#
+# AI-Usage-End
+```
+
+---
+
 ## 触发词
 
 - "并发审查"

@@ -1,0 +1,31 @@
+{
+  "name": "python-ci-cd-workflow",
+  "version": "1.0.0",
+  "description": "Python CI/CD 工作流技能。当用户要求配置 CI/CD、设置自动化流水线、或请求部署工作流时触发。专门用于配置 Python 项目的持续集成/持续部署流水线，包括 GitHub Actions、代码质量门禁和容器化构建。",
+  "triggers": [
+    "CI/CD 配置",
+    "自动化流水线",
+    "GitHub Actions",
+    "部署工作流",
+    "CI/CD workflow"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "ci-cd",
+    "github-actions",
+    "docker",
+    "automation"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-test-generator",
+    "python-typing-reviewer",
+    "python-dependency-reviewer",
+    "python-config-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

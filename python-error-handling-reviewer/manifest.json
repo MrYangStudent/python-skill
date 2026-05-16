@@ -1,0 +1,28 @@
+{
+  "name": "python-error-handling-reviewer",
+  "version": "1.0.0",
+  "description": "Python 错误处理审查技能。当用户要求审查错误处理、检查异常处理、或请求进行错误处理审查时触发。专门用于审查 Python 代码中错误处理的正确性和完整性。",
+  "triggers": [
+    "错误处理审查",
+    "异常处理检查",
+    "error handling review",
+    "异常审查",
+    "错误处理"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "error-handling",
+    "exception",
+    "code-review"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-typing-reviewer",
+    "python-logging-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

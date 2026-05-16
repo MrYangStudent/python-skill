@@ -1,0 +1,30 @@
+{
+  "name": "python-security-reviewer",
+  "version": "1.0.0",
+  "description": "Python 安全审查技能。当用户要求审查代码安全性、检查漏洞、或请求进行安全审查时触发。专门用于发现和修复 Python 代码中的安全漏洞，精通 OWASP Top 10。",
+  "triggers": [
+    "安全审查",
+    "安全检查",
+    "security review",
+    "漏洞扫描",
+    "敏感信息检查",
+    "注入防护"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "security",
+    "owasp",
+    "vulnerability",
+    "code-review"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-database-reviewer",
+    "python-dependency-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

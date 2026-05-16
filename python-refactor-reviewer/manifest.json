@@ -1,0 +1,31 @@
+{
+  "name": "python-refactor-reviewer",
+  "version": "1.0.0",
+  "description": "Python 代码重构审查技能。当用户要求审查代码质量、检查代码重复、或请求进行重构审查时触发。专门用于发现代码中的设计问题和重构机会，推广 Pythonic 惯用法。",
+  "triggers": [
+    "重构审查",
+    "代码重复检查",
+    "重构建议",
+    "refactor review",
+    "代码质量审查",
+    "代码坏味道"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "refactoring",
+    "code-quality",
+    "design-patterns",
+    "code-review"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-architecture-reviewer",
+    "python-typing-reviewer",
+    "python-performance-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

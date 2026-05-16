@@ -1,0 +1,29 @@
+{
+  "name": "python-api-doc-generator",
+  "version": "1.0.0",
+  "description": "Python API 文档生成技能。当用户要求生成 API 文档、创建 OpenAPI 规范、或请求生成 API 参考文档时使用。从 Python Web 框架自动生成 API 文档。",
+  "triggers": [
+    "生成 API 文档",
+    "生成 OpenAPI",
+    "OpenAPI 规范",
+    "API 文档",
+    "FastAPI 文档"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "api-documentation",
+    "openapi",
+    "postman",
+    "fastapi"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-api-design-reviewer",
+    "python-doc-generator",
+    "python-full-dev-workflow"
+  ]
+}
