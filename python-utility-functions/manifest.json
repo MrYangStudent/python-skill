@@ -1,0 +1,38 @@
+{
+  "name": "python-utility-functions",
+  "version": "1.0.0",
+  "description": "Python 通用工具函数封装技能。当用户要求封装常用函数、编写工具库、生成 HTTP 客户端封装、签名/加密工具等时触发。专门用于识别重复逻辑并封装为可复用的类型安全工具函数。",
+  "triggers": [
+    "封装工具函数",
+    "通用函数",
+    "工具库",
+    "HTTP封装",
+    "签名工具",
+    "加密工具",
+    "列表工具",
+    "字典工具",
+    "去重",
+    "分页",
+    "retry重试",
+    "Python工具函数",
+    "utility functions",
+    "最小可行封装"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "utility-functions",
+    "toolkit",
+    "stdlib",
+    "type-safe"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-minimal-code",
+    "python-refactor-reviewer",
+    "python-full-dev-workflow"
+  ]
+}

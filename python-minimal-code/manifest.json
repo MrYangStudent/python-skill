@@ -1,0 +1,34 @@
+{
+  "name": "python-minimal-code",
+  "version": "1.0.0",
+  "description": "Python 最小化代码技能。当用户要求简化代码、减少过度工程、检查 YAGNI 原则、或请求最简实现时触发。专门用于识别和消除过度设计，遵循"最好的代码是不会写的代码"哲学。",
+  "triggers": [
+    "简化代码",
+    "减少过度工程",
+    "YAGNI",
+    "最简实现",
+    "代码精简",
+    "最小化",
+    "标准库优先",
+    "过度设计",
+    "minimal code"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "minimal-code",
+    "yagni",
+    "code-review",
+    "simplicity"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-refactor-reviewer",
+    "python-dependency-reviewer",
+    "python-utility-functions",
+    "python-full-dev-workflow"
+  ]
+}

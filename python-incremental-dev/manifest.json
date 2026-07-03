@@ -1,0 +1,43 @@
+{
+  "name": "python-incremental-dev",
+  "version": "1.0.0",
+  "description": "Python 增量开发工作流，专为在大型项目中新增功能设计。核心原则：新增代码不改动旧有逻辑，只关注新开发代码。整合需求分析、代码生成、测试、审查等完整技能链，配套知识库 CLI 工具。",
+  "triggers": [
+    "新增功能开发",
+    "增量开发",
+    "开发新模块",
+    "新功能工作流",
+    "增量开发工作流",
+    "incremental development",
+    "新增代码开发",
+    "feature development",
+    "胶水编程",
+    "知识库",
+    "参照现有代码",
+    "最小改动",
+    "project knowledge"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "workflow",
+    "development",
+    "incremental",
+    "knowledge-base"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-project-rules",
+    "python-feature-development-workflow",
+    "python-test-generator",
+    "python-doc-generator",
+    "python-api-doc-generator",
+    "python-error-handling-reviewer",
+    "python-security-reviewer",
+    "python-concurrency-reviewer",
+    "python-refactor-reviewer"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "python-async-lifecycle-reviewer",
+  "version": "1.0.0",
+  "description": "Python 异步生命周期审查技能。检查 asyncio 任务的生命周期管理、取消信号处理、超时设置和资源清理。当用户要求审查 async 代码、检查 asyncio 使用、或请求诊断异步超时/取消问题时触发。",
+  "triggers": [
+    "async审查",
+    "asyncio检查",
+    "async review",
+    "异步生命周期",
+    "任务取消",
+    "超时检查",
+    "asyncio审查",
+    "异步代码审查",
+    "async生命周期",
+    "协程审查"
+  ],
+  "language": "zh-CN",
+  "author": "python-skill",
+  "tags": [
+    "python",
+    "asyncio",
+    "async",
+    "lifecycle",
+    "cancellation",
+    "timeout"
+  ],
+  "requirements": {
+    "python_version": ">=3.10"
+  },
+  "related_skills": [
+    "python-concurrency-reviewer",
+    "python-error-handling-reviewer",
+    "python-full-dev-workflow"
+  ]
+}
